@@ -70,7 +70,11 @@ if (! function_exists('convertStringToDate')) {
         }
 
         list($day, $month, $year) = explode('/', $param);
-        return (new \DateTime($year.'-'.$month.'-'.$day))->format('Y-m-d');
+        try {
+            return (new DateTime($year . '-' . $month . '-' . $day))->format('Y-m-d');
+        } catch (Exception $e) {
+            return null;
+        }
     }
 }
 
@@ -85,18 +89,18 @@ if (! function_exists('convertFirstsUp')) {
     function convertFirstsUp(?string $param)
     {
         $words = explode(' ', $param);
-        $newword = "";
+        $newWord = "";
         if(count($words) > 1){
             foreach ($words as $word){
                 if(strlen($word) > 2){
-                    $newword = $newword.' '.ucfirst($word);
+                    $newWord = $newWord.' '.ucfirst($word);
                 }else{
-                    $newword = $newword.' '.$word;
+                    $newWord = $newWord.' '.$word;
                 }
             }
         }else{
-            $newword = ucfirst($param);
+            $newWord = ucfirst($param);
         }
-        return $newword;
+        return $newWord;
     }
 }
