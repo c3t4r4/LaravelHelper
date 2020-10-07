@@ -3,7 +3,7 @@ if (! function_exists('convertStringToDouble')) {
     function convertStringToDouble(?string $param)
     {
         if(empty($param)){
-            return null;
+            return 0.0;
         }
 
         return floatval(str_replace([','], '.', str_replace(['.'], '', $param)));
@@ -82,6 +82,13 @@ if (! function_exists('convertDoubleToString')) {
     function convertDoubleToString(?float $param)
     {
         return number_format($param, 2, ',', '.');
+    }
+}
+
+if (! function_exists('convertDoubleToMoneyString')) {
+    function convertDoubleToMoneyString(?float $param)
+    {
+        return 'R$ '.number_format($param, 2, ',', '.');
     }
 }
 
