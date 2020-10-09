@@ -1,7 +1,9 @@
 # Personal Laravel Helper
+Meus Helpers Pessoais
 My Personal Laravel Helper
 
 * Adicione o seguinte código no arquivo composer.json
+* Add the following code to the composer.json file
 
 ```
 "files": [
@@ -10,7 +12,8 @@ My Personal Laravel Helper
 ]'
 ```
 
-* Ficando .:
+* Resultado .:
+* Result .:
 
 ```
 "autoload": {
@@ -29,9 +32,11 @@ My Personal Laravel Helper
 ```
 
 * Após executar o comando .:
+* After execute the command .:
 
 ```
 composer dump-autoload
 ```
 
-* Com isso os Helpers já estarão funcionando.
+* Os Helpers já estarão funcionando.
+* The Helpers will already be working
